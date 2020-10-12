@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Assignment.Data;
+using Assignment.Data.Impl;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Assignment
 {
@@ -29,6 +31,15 @@ namespace Assignment
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin",a=>
+                    a.RequireAuthenticatedUser().RequireClaim("Level","5"));
+                    
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
