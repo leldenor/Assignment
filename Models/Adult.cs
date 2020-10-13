@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace Models {
+namespace Assignment.Models {
 public class Adult : Person {
     public string JobTitle { get; set; }
 

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
-using Models;
+using Assignment.Data;
+using Assignment.Models;
 
-namespace FileData {
-public class FileContext {
+namespace Assignment.Persistence {
+public class FileContext : IFamilyService {
     public IList<Family> Families { get; private set; }
     public IList<Adult> Adults { get; private set; }
 
@@ -40,6 +42,26 @@ public class FileContext {
         using (StreamWriter outputFile = new StreamWriter(adultsFile, false)) {
             outputFile.Write(jsonAdults);
         }
+    }
+
+    public void AddAdult(Adult adult)
+    {
+        int max = Adults.Max(adult => adult.Id);
+        adult.Id = (++max);
+        Adults.Add(adult);
+        SaveChanges();
+    }
+
+    public IList<Adult> GetAdults()
+    {
+        return Adults;
+    }
+
+    public void RemoveAdult(int personId)
+    {
+        Adult toRemove = Adults.First(a => a.Id == personId);
+        Adults.Remove(toRemove);
+        SaveChanges();
     }
 }
 }

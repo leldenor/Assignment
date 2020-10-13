@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Models;
+using Assignment.Models;
 
 namespace Assignment.Data.Impl
 {
@@ -17,7 +17,8 @@ namespace Assignment.Data.Impl
                 {
                     Password = "123456",
                     SecurityLevel = 5,
-                    UserName = "Admin"
+                    UserName = "Admin",
+                    Role = "Admin"
                 }
             }.ToList();
         }

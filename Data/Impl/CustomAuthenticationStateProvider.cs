@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
-using Models;
+using Assignment.Models;
 
 namespace Assignment.Data.Impl
 {
@@ -76,7 +76,7 @@ namespace Assignment.Data.Impl
             List<Claim> claims=new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.UserName));
             claims.Add(new Claim("Level",user.SecurityLevel.ToString()));
-            
+            claims.Add(new Claim("Role",user.Role));
             ClaimsIdentity identity=new ClaimsIdentity(claims, "auth_type");
             return identity;
         }

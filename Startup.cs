@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Assignment.Data;
 using Assignment.Data.Impl;
+using Assignment.Persistence;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Assignment
@@ -30,15 +32,17 @@ namespace Assignment
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddSingleton<IFamilyService, FileContext>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin",a=>
-                    a.RequireAuthenticatedUser().RequireClaim("Level","5"));
-                    
+                options.AddPolicy("Admin", a =>
+                    a.RequireAuthenticatedUser().RequireClaim("Role", "Admin"));
+                options.AddPolicy("LoggedIn", a => a.RequireAuthenticatedUser());
+                options.AddPolicy("Adult", a => a.RequireAuthenticatedUser().RequireClaim("Role", "Admin", "Adult"));
+
             });
         }
 
