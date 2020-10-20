@@ -1,4 +1,4 @@
-﻿
+﻿@using LoginComponent
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
 
@@ -8,7 +8,14 @@
 
 <div class="main">
     <div class="top-row px-4">
-        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <AuthorizeView>
+                    <NotAuthorized>
+                        <a href="" @onclick="LoginPage"> Login </a>
+                    </NotAuthorized>
+                    <Authorized>
+                        <Logout/>
+                    </Authorized>
+                </AuthorizeView>
     </div>
 
     <div class="content px-4">
@@ -17,6 +24,9 @@
 </div>
 
 @code{
-
+    private void LoginPage()
+    {
+        NavigationManager.NavigateTo("/Security");
+    }
 }
 

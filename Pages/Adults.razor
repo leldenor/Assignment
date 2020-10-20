@@ -1,20 +1,18 @@
-﻿@page "/Adults"
-@using Assignment.Models
+﻿@using Assignment.Models
 @using Assignment.Data
 @using Microsoft.AspNetCore.Mvc.Filters
 @using Microsoft.AspNetCore.Mvc.Formatters
 @inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
-<h3>Adults</h3>
-@if (!authenticated)
-{
-    <p>To access information please Log in</p>
-    <a href="" @onclick="Login">Login</a>
-}
-<AuthorizeView Policy="LoggedIn">
-<p>
-    Filter by First name: <input type="text" @oninput="@((arg)=>Filter(arg))" style="width: 100px"/>
-</p>
+<h3>
+    Adults
+    <AuthorizeView Policy="Adult">
+        <button @onclick="AddAdult">
+            <i class="oi oi-plus" style="color:red"/>
+        </button>
+    </AuthorizeView>
+</h3>
+
 
 @if (adultsToShow == null)
 {
@@ -30,7 +28,6 @@ else if (!adultsToShow.Any())
 }
 else
 {
-    
     <table class="table">
         <thead>
         <tr>
@@ -52,9 +49,11 @@ else
         {
             <tr>
                 <td>
-                    <button @onclick="@(() => RemoveAdult(item.Id))">
-                        <i class="oi oi-trash" style="color:red"/>
-                    </button>
+                    <AuthorizeView Policy="Adult">
+                        <button @onclick="@(() => RemoveAdult(item.Id))">
+                            <i class="oi oi-trash" style="color:red"/>
+                        </button>
+                    </AuthorizeView>
                 </td>
                 <td>@item.Id</td>
                 <td>@item.FirstName</td>
@@ -70,57 +69,31 @@ else
         }
         </tbody>
     </table>
-    
-}</AuthorizeView>
+}
 
 @code {
-    private IList<Adult> allAdults;
     private IList<Adult> adultsToShow;
-    private bool authenticated { get; set; }
-    [CascadingParameter] protected Task<AuthenticationState> AuthStat { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        var user = (await AuthStat).User;
-        if (!user.Identity.IsAuthenticated)
-        {
-            authenticated = false;
-        }
-        else
-        {
-            authenticated = true;
-        }
-        allAdults = FamilyService.GetAdults();
-        adultsToShow = allAdults;
+        adultsToShow = FamilyService.Family.Adults;
     }
 
     private void RemoveAdult(int adultId)
     {
-        Adult adultToRemove = allAdults.First(a => a.Id == adultId);
+        Adult adultToRemove = adultsToShow.First(a => a.Id == adultId);
         FamilyService.RemoveAdult(adultId);
-        allAdults.Remove(adultToRemove);
-    }
-
-    private void Filter(ChangeEventArgs changeEventArgs)
-    {
-        string filterByName = null;
-        try
-        {
-            filterByName = changeEventArgs.Value.ToString();
-        }catch(Exception e){}
-        if (filterByName != null)
-        {
-            adultsToShow = allAdults.Where(a => a.FirstName.Equals(filterByName)).ToList();
-        }
-        else
-        {
-            adultsToShow = allAdults;
-        }
+        adultsToShow.Remove(adultToRemove);
     }
 
     private void Login()
     {
         NavigationManager.NavigateTo("/Security");
+    }
+
+    private void AddAdult()
+    {
+        NavigationManager.NavigateTo("/AddAdult");
     }
 
 }

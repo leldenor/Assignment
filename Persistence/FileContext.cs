@@ -9,6 +9,7 @@ namespace Assignment.Persistence {
 public class FileContext : IFamilyService {
     public IList<Family> Families { get; private set; }
     public IList<Adult> Adults { get; private set; }
+    
 
     private readonly string familiesFile = "families.json";
     private readonly string adultsFile = "adults.json";
@@ -46,22 +47,83 @@ public class FileContext : IFamilyService {
 
     public void AddAdult(Adult adult)
     {
-        int max = Adults.Max(adult => adult.Id);
+        IList<Adult> adults= Families.SelectMany(item => item.Adults).ToList();
+        int max = adults.Max(adult => adult.Id);
         adult.Id = (++max);
-        Adults.Add(adult);
+        Family.Adults.Add(adult);
         SaveChanges();
     }
-
-    public IList<Adult> GetAdults()
-    {
-        return Adults;
-    }
+    
 
     public void RemoveAdult(int personId)
     {
-        Adult toRemove = Adults.First(a => a.Id == personId);
-        Adults.Remove(toRemove);
+        Adult toRemove = Family.Adults.First(a => a.Id == personId);
+        Family.Adults.Remove(toRemove);
         SaveChanges();
     }
+
+    public IList<Family> GetFamilies()
+    {
+        IList<Family> tmp=new List<Family>(Families);
+        return tmp;
+    }
+    
+
+    public Family Family { get; set; }
+    public void RemoveFamily(int HouseNumber, string StreetName)
+    {
+        Family toRemove = Families.First(a => a.HouseNumber ==HouseNumber&&a.StreetName.Equals(StreetName));
+        Families.Remove(toRemove);
+        SaveChanges();
+    }
+
+    public void AddFamily(Family family)
+    {
+        Families.Add(family);
+        SaveChanges();
+    }
+
+    public void RemoveChild(int childId)
+    {
+        Child toRemove = Family.Children.First(a => a.Id == childId);
+        Family.Children.Remove(toRemove);
+        SaveChanges();
+    }
+
+    public void RemoveChildPet(int petId)
+    {
+
+    }
+
+    public void RemovePet(int petId)
+    {
+        Pet toRemove = Family.Pets.First(a => a.Id == petId);
+        Family.Pets.Remove(toRemove);
+        SaveChanges();
+    }
+
+    public void AddChild(Child child)
+    {
+        IList<Child> children= Families.SelectMany(item => item.Children).ToList();
+        int max = children.Max(child => child.Id);
+        child.Id = (++max);
+        Family.Children.Add(child);
+        SaveChanges();
+    }
+
+    public void AddPet(Pet pet)
+    {
+        IList<Pet> pets= Families.SelectMany(item => item.Pets).ToList();
+        foreach (var item in Families.SelectMany(item => item.Children.SelectMany(t => t.Pets)).ToList())
+        {
+            pets.Add(item);
+        }
+        
+        int max = pets.Max(petId => petId.Id);
+        pet.Id = (++max);
+        Family.Pets.Add(pet);
+        SaveChanges();
+    }
+    
 }
 }

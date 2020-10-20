@@ -47,6 +47,7 @@
         </div>
     <p class="actions">
         <button class="btn btn-outline-dark" type="submit">Create</button>
+        <button class="btn btn-outline-dark" type="button" @onclick="Families">Cancel</button>
     </p>
 </EditForm>
 
@@ -56,6 +57,12 @@
     private void AddNewAdult()
     {
         FamilyService.AddAdult(newAdultItem);
-        NavigationManager.NavigateTo("/Adults");
+        NavigationManager.NavigateTo("/SeeFamily");
     }
+
+    private void Families()
+    {
+        NavigationManager.NavigateTo("/SeeFamily");
+    }
+
 }

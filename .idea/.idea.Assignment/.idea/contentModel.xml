@@ -44,10 +44,18 @@
       <e p="Pages" t="Include">
         <e p="_Host.cshtml" t="Include" />
         <e p="AddAdult.razor" t="Include" />
+        <e p="AddChild.razor" t="Include" />
+        <e p="AddFamily.razor" t="Include" />
+        <e p="AddPet.razor" t="Include" />
         <e p="Adults.razor" t="Include" />
+        <e p="Children.razor" t="Include" />
         <e p="Error.cshtml" t="Include" />
+        <e p="Families.razor" t="Include" />
+        <e p="FamilyPets.razor" t="Include" />
         <e p="Index.razor" t="Include" />
+        <e p="Logout.razor" t="Include" />
         <e p="Security.razor" t="Include" />
+        <e p="SeeFamily.razor" t="Include" />
       </e>
       <e p="Persistence" t="Include">
         <e p="FileContext.cs" t="Include" />

@@ -19,6 +19,20 @@ namespace Assignment.Data.Impl
                     SecurityLevel = 5,
                     UserName = "Admin",
                     Role = "Admin"
+                },
+                new User
+                {
+                Password = "654321",
+                SecurityLevel = 4,
+                UserName = "Adult",
+                Role = "Adult"
+                },
+                new User
+                {
+                    Password = "123654",
+                    SecurityLevel = 1,
+                    UserName = "Child",
+                    Role = "Child"
                 }
             }.ToList();
         }

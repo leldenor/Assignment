@@ -81,79 +81,6 @@
     "Pets": []
   },
   {
-    "StreetName": "Pine Street",
-    "HouseNumber": 1,
-    "Adults": [
-      {
-        "JobTitle": "Singer",
-        "Id": 2,
-        "FirstName": "Ahana",
-        "LastName": "Bernard",
-        "HairColor": "Brown",
-        "EyeColor": "Brown",
-        "Age": 34,
-        "Weight": 56.6,
-        "Height": 134,
-        "Sex": "F"
-      }
-    ],
-    "Children": [
-      {
-        "ChildInterests": [
-          {
-            "ChildId": 2,
-            "InterestId": "Bowling"
-          },
-          {
-            "ChildId": 2,
-            "InterestId": "Ultimate"
-          },
-          {
-            "ChildId": 2,
-            "InterestId": "Racing Cars"
-          },
-          {
-            "ChildId": 2,
-            "InterestId": "Kite Flying"
-          }
-        ],
-        "Pets": [],
-        "Id": 2,
-        "FirstName": "Eduardo",
-        "LastName": "Bernard",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 6,
-        "Weight": 41.6,
-        "Height": 94,
-        "Sex": "M"
-      },
-      {
-        "ChildInterests": [
-          {
-            "ChildId": 3,
-            "InterestId": "Racing Cars"
-          },
-          {
-            "ChildId": 3,
-            "InterestId": "Kite Flying"
-          }
-        ],
-        "Pets": [],
-        "Id": 3,
-        "FirstName": "Nyjah",
-        "LastName": "Bernard",
-        "HairColor": "Black",
-        "EyeColor": "Brown",
-        "Age": 1,
-        "Weight": 23.6,
-        "Height": 64,
-        "Sex": "M"
-      }
-    ],
-    "Pets": []
-  },
-  {
     "StreetName": "Theater Street",
     "HouseNumber": 1,
     "Adults": [
@@ -2432,5 +2359,145 @@
         "Age": 8
       }
     ]
+  },
+  {
+    "StreetName": "Vienna Street",
+    "HouseNumber": 3,
+    "Adults": [
+      {
+        "JobTitle": "Teacher",
+        "Id": 43,
+        "FirstName": "Anna",
+        "LastName": "Queen",
+        "HairColor": "Black",
+        "EyeColor": "Grey",
+        "Age": 40,
+        "Weight": 85,
+        "Height": 175,
+        "Sex": "F"
+      }
+    ],
+    "Children": [
+      {
+        "ChildInterests": [],
+        "Pets": [
+          {
+            "Id": 18,
+            "Species": "Cat",
+            "Name": "Tom",
+            "Age": 2
+          }
+        ],
+        "Id": 62,
+        "FirstName": "Mike",
+        "LastName": "Queen",
+        "HairColor": "Brown",
+        "EyeColor": "Grey",
+        "Age": 5,
+        "Weight": 10,
+        "Height": 110,
+        "Sex": "M"
+      }
+    ],
+    "Pets": []
+  },
+  {
+    "StreetName": "Theater Street",
+    "HouseNumber": 3,
+    "Adults": [
+      {
+        "JobTitle": "Teacher",
+        "Id": 44,
+        "FirstName": "Sara",
+        "LastName": "Merlyn",
+        "HairColor": "Blond",
+        "EyeColor": "Blue",
+        "Age": 25,
+        "Weight": 75,
+        "Height": 165,
+        "Sex": "F"
+      }
+    ],
+    "Children": [],
+    "Pets": []
+  },
+  {
+    "StreetName": "California Street",
+    "HouseNumber": 4,
+    "Adults": [
+      {
+        "JobTitle": "Pilot",
+        "Id": 46,
+        "FirstName": "Jack",
+        "LastName": "Dalton",
+        "HairColor": "Brown",
+        "EyeColor": "Blue",
+        "Age": 45,
+        "Weight": 100,
+        "Height": 187,
+        "Sex": "M"
+      },
+      {
+        "JobTitle": "Teacher",
+        "Id": 47,
+        "FirstName": "Mia",
+        "LastName": "Dalton",
+        "HairColor": "Blond",
+        "EyeColor": "Blue",
+        "Age": 36,
+        "Weight": 75,
+        "Height": 179,
+        "Sex": "F"
+      }
+    ],
+    "Children": [],
+    "Pets": []
+  },
+  {
+    "StreetName": "Theater Street",
+    "HouseNumber": 4,
+    "Adults": [
+      {
+        "JobTitle": "Teacher",
+        "Id": 48,
+        "FirstName": "Megan",
+        "LastName": "Jordan",
+        "HairColor": "Blond",
+        "EyeColor": "Blue",
+        "Age": 51,
+        "Weight": 95,
+        "Height": 165,
+        "Sex": "F"
+      }
+    ],
+    "Children": [
+      {
+        "ChildInterests": [],
+        "Pets": [
+          {
+            "Id": 20,
+            "Species": "Dog",
+            "Name": "Tommy",
+            "Age": 1
+          },
+          {
+            "Id": 21,
+            "Species": "Cat",
+            "Name": "Bullet",
+            "Age": 2
+          }
+        ],
+        "Id": 64,
+        "FirstName": "Anna",
+        "LastName": "Jordan",
+        "HairColor": "Black",
+        "EyeColor": "Blue",
+        "Age": 16,
+        "Weight": 70,
+        "Height": 170,
+        "Sex": "F"
+      }
+    ],
+    "Pets": []
   }
 ]
