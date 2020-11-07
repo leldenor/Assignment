@@ -4,7 +4,7 @@
 @inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
 <h3>Add Pet</h3>
-<EditForm Model="@newPetItem" OnValidSubmit="@AddNewPetItem">
+<EditForm Model="@newPetItem" OnValidSubmit="@AddNewPetItemAsync">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
     <div class="form-group">
@@ -28,9 +28,9 @@
 @code {
     private Pet newPetItem = new Pet();
 
-    private void AddNewPetItem()
+    private async Task AddNewPetItemAsync()
     {
-        FamilyService.AddPet(newPetItem);
+        await FamilyService.AddPetAsync(newPetItem);
         NavigationManager.NavigateTo("/SeeFamily");
     }
 

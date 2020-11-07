@@ -53,7 +53,7 @@ else
             <tr>
                 <td>
                     <AuthorizeView Policy="Adult">
-                        <button @onclick="@(() => RemoveChild(item.Id))">
+                        <button @onclick="@(() => RemoveChildAsync(item.Id))">
                             <i class="oi oi-trash" style="color:red"/>
                         </button>
                     </AuthorizeView>
@@ -153,10 +153,10 @@ else
         return x;
     }
 
-    private void RemoveChild(int childId)
+    private async Task RemoveChildAsync(int childId)
     {
         Child childToRemove = childrenToShow.First(a => a.Id == childId);
-        FamilyService.RemoveChild(childId);
+        await FamilyService.RemoveChildAsync(childId);
         childrenToShow.Remove(childToRemove);
     }
 

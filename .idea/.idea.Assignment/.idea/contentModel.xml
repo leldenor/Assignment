@@ -14,6 +14,7 @@
       <e p="Assignment.sln" t="IncludeFlat" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Data" t="Include">
+        <e p="FamilyServiceClient.cs" t="Include" />
         <e p="IFamilyService.cs" t="Include" />
         <e p="Impl" t="Include">
           <e p="CustomAuthenticationStateProvider.cs" t="Include" />

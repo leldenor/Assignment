@@ -50,7 +50,7 @@ else
             <tr>
                 <td>
                     <AuthorizeView Policy="Adult">
-                        <button @onclick="@(() => RemoveAdult(item.Id))">
+                        <button @onclick="@(() => RemoveAdultAsync(item.Id))">
                             <i class="oi oi-trash" style="color:red"/>
                         </button>
                     </AuthorizeView>
@@ -79,10 +79,10 @@ else
         adultsToShow = FamilyService.Family.Adults;
     }
 
-    private void RemoveAdult(int adultId)
+    private async Task RemoveAdultAsync(int adultId)
     {
         Adult adultToRemove = adultsToShow.First(a => a.Id == adultId);
-        FamilyService.RemoveAdult(adultId);
+        await FamilyService.RemoveAdultAsync(adultId);
         adultsToShow.Remove(adultToRemove);
     }
 

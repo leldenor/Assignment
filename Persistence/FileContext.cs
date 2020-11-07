@@ -6,7 +6,7 @@ using Assignment.Data;
 using Assignment.Models;
 
 namespace Assignment.Persistence {
-public class FileContext : IFamilyService {
+public class FileContext {
     public IList<Family> Families { get; private set; }
     public IList<Adult> Adults { get; private set; }
     

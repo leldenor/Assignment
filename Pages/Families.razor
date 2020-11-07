@@ -48,7 +48,7 @@
                     <tr>
                         <td>
                             <AuthorizeView Policy="Admin">
-                                <button @onclick="@(() => RemoveFamily(item.HouseNumber, item.StreetName))">
+                                <button @onclick="@(() => RemoveFamilyAsync(item.HouseNumber, item.StreetName))">
                                     <i class="oi oi-trash" style="color:red"/>
                                 </button>
                             </AuthorizeView>
@@ -83,7 +83,7 @@
         var user = (await AuthStat).User;
         authenticated = user.Identity.IsAuthenticated;
 
-        allFamilies = FamilyService.GetFamilies();
+        allFamilies = await FamilyService.GetFamiliesAsync();
         familiesToShow = allFamilies;
     }
 
@@ -94,10 +94,10 @@
         NavigationManager.NavigateTo("/SeeFamily");
     }
 
-    private void RemoveFamily(int HouseNumber, string StreetName)
+    private async Task RemoveFamilyAsync(int HouseNumber, string StreetName)
     {
         Family familyToRemove = allFamilies.First(a => a.HouseNumber == HouseNumber && a.StreetName.Equals(StreetName));
-        FamilyService.RemoveFamily(HouseNumber, StreetName);
+        await FamilyService.RemoveFamilyAsync(HouseNumber, StreetName);
         allFamilies.Remove(familyToRemove);
     }
 

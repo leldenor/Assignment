@@ -14,29 +14,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f904d9d6-343b-4c20-ad78-16f7e71c4987" name="Default Changelist" comment="Adult Approach">
-      <change afterPath="$PROJECT_DIR$/Pages/AddChild.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/AddFamily.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/AddPet.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/Children.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/Families.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/FamilyPets.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/Logout.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/SeeFamily.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/FamilyServiceClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/IFamilyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/IFamilyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Impl/InMemoryUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Impl/InMemoryUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Child.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Child.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Adult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Adult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ChildInterest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ChildInterest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Family.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Family.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Person.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Pet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Pet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/AddAdult.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/AddAdult.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/AddChild.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/AddChild.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/AddFamily.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/AddFamily.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/AddPet.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/AddPet.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/Adults.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Adults.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Security.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Security.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Children.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Children.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Families.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Families.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/FamilyPets.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/FamilyPets.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/FileContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/FileContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/families.json" beforeDir="false" afterPath="$PROJECT_DIR$/families.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,38 +58,39 @@
         <option value="$PROJECT_DIR$/Pages/Security.cshtml" />
         <option value="$PROJECT_DIR$/Data/IUserService.cs" />
         <option value="$PROJECT_DIR$/App.razor" />
-        <option value="$PROJECT_DIR$/Models/Adult.cs" />
-        <option value="$PROJECT_DIR$/Models/ChildInterest.cs" />
-        <option value="$PROJECT_DIR$/Models/Interest.cs" />
-        <option value="$PROJECT_DIR$/Models/Pet.cs" />
         <option value="$PROJECT_DIR$/Models/User.cs" />
         <option value="$PROJECT_DIR$/Data/Impl/CustomAuthenticationStateProvider.cs" />
-        <option value="$PROJECT_DIR$/Startup.cs" />
         <option value="$PROJECT_DIR$/Pages/Family.razor" />
         <option value="$PROJECT_DIR$/Data/See.cs" />
         <option value="$PROJECT_DIR$/Pages/Families.cs" />
         <option value="$PROJECT_DIR$/Pages/Families1.cs" />
-        <option value="$PROJECT_DIR$/Models/Family.cs" />
         <option value="$PROJECT_DIR$/Models/Child.cs" />
         <option value="$PROJECT_DIR$/Pages/Index.razor" />
         <option value="$PROJECT_DIR$/Pages/Logout.razor" />
         <option value="$PROJECT_DIR$/Pages/Security.razor" />
         <option value="$PROJECT_DIR$/Shared/MainLayout.razor" />
-        <option value="$PROJECT_DIR$/Models/Person.cs" />
         <option value="$PROJECT_DIR$/Shared/NavMenu.razor" />
-        <option value="$PROJECT_DIR$/Pages/Adults.razor" />
-        <option value="$PROJECT_DIR$/Pages/FamilyPets.razor" />
         <option value="$PROJECT_DIR$/Data/Impl/InMemoryUserService.cs" />
         <option value="$PROJECT_DIR$/Pages/SeeFamily.razor" />
-        <option value="$PROJECT_DIR$/Pages/AddAdult.razor" />
-        <option value="$PROJECT_DIR$/Pages/AddFamily.razor" />
         <option value="$PROJECT_DIR$/families.json" />
-        <option value="$PROJECT_DIR$/Data/IFamilyService.cs" />
-        <option value="$PROJECT_DIR$/Pages/AddChild.razor" />
         <option value="$PROJECT_DIR$/Persistence/FileContext.cs" />
+        <option value="$PROJECT_DIR$/Startup.cs" />
+        <option value="$PROJECT_DIR$/Data/IFamilyService.cs" />
         <option value="$PROJECT_DIR$/Pages/Families.razor" />
-        <option value="$PROJECT_DIR$/Pages/AddPet.razor" />
+        <option value="$PROJECT_DIR$/Pages/FamilyPets.razor" />
         <option value="$PROJECT_DIR$/Pages/Children.razor" />
+        <option value="$PROJECT_DIR$/Pages/Adults.razor" />
+        <option value="$PROJECT_DIR$/Pages/AddPet.razor" />
+        <option value="$PROJECT_DIR$/Pages/AddFamily.razor" />
+        <option value="$PROJECT_DIR$/Pages/AddChild.razor" />
+        <option value="$PROJECT_DIR$/Pages/AddAdult.razor" />
+        <option value="$PROJECT_DIR$/Models/Family.cs" />
+        <option value="$PROJECT_DIR$/Models/Adult.cs" />
+        <option value="$PROJECT_DIR$/Models/ChildInterest.cs" />
+        <option value="$PROJECT_DIR$/Models/Interest.cs" />
+        <option value="$PROJECT_DIR$/Models/Person.cs" />
+        <option value="$PROJECT_DIR$/Models/Pet.cs" />
+        <option value="$PROJECT_DIR$/Data/FamilyServiceClient.cs" />
       </list>
     </option>
   </component>
@@ -108,6 +105,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -166,6 +164,11 @@
       <workItem from="1603027495471" duration="9332000" />
       <workItem from="1603095636520" duration="23238000" />
       <workItem from="1603210766550" duration="3945000" />
+      <workItem from="1603275294468" duration="2293000" />
+      <workItem from="1603350195809" duration="3096000" />
+      <workItem from="1603963455357" duration="3827000" />
+      <workItem from="1604053140761" duration="451000" />
+      <workItem from="1604757543881" duration="822000" />
     </task>
     <task id="LOCAL-00001" summary="Admin">
       <created>1602504070816</created>
@@ -216,30 +219,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="577" y="118" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602165592317" />
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1603213587327">
+    <state width="726" height="201" key="GridCell.Tab.0.bottom" timestamp="1603967293183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603213587327" />
-    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1603213587326">
+    <state width="726" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603967293183" />
+    <state width="726" height="201" key="GridCell.Tab.0.center" timestamp="1603967293183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603213587326" />
-    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1603213587326">
+    <state width="726" height="201" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603967293183" />
+    <state width="726" height="201" key="GridCell.Tab.0.left" timestamp="1603967293183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603213587326" />
-    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1603213587327">
+    <state width="726" height="201" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603967293183" />
+    <state width="726" height="201" key="GridCell.Tab.0.right" timestamp="1603967293183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603213587327" />
+    <state width="726" height="201" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603967293183" />
     <state x="722" y="145" key="Rider.ProjectTemplateDialog.Size" timestamp="1602503498370">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="722" y="145" key="Rider.ProjectTemplateDialog.Size/0.0.1536.824@0.0.1536.824" timestamp="1602503498370" />
-    <state x="863" y="91" key="RiderGenerateDialog" timestamp="1603096086258">
+    <state x="863" y="91" key="RiderGenerateDialog" timestamp="1603965374765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="863" y="91" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1603096086258" />
+    <state x="863" y="91" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1603965374765" />
     <state x="583" y="133" key="RollbackChangesDialog" timestamp="1602939938066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

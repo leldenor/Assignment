@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Assignment.Models;
 
 namespace Assignment.Data
 {
     public interface IFamilyService
     {
-        void AddAdult(Adult adult);
-        void RemoveAdult(int personId);
-        IList<Family> GetFamilies();
+        Task AddAdultAsync(Adult adult);
+        Task RemoveAdultAsync(int personId);
+        Task<IList<Family>> GetFamiliesAsync();
         Family Family { get; set; }
-        void RemoveFamily(int HouseNumber, string StreetName);
-        void AddFamily(Family family);
-        void RemoveChild(int childId);
-        void RemoveChildPet(int petId);
-        void RemovePet(int petId);
-        void AddChild(Child child);
-        void AddPet(Pet pet);
+        Task RemoveFamilyAsync(int HouseNumber, string StreetName);
+        Task AddFamilyAsync(Family family);
+        Task RemoveChildAsync(int childId);
+        Task RemoveChildPetAsync(int petId);
+        Task RemovePetAsync(int petId);
+        Task AddChildAsync(Child child);
+        Task AddPetAsync(Pet pet);
     }
 }

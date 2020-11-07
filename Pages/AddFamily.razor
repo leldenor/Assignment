@@ -2,6 +2,7 @@
 @attribute [Authorize(Policy = "Admin")]
 @using Assignment.Models
 @using Assignment.Data
+@using System.Collections
 @inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
 
@@ -9,7 +10,7 @@
 @if (!added)
 {
     <h4>Adult</h4>
-    <EditForm Model="@newAdultItem" OnValidSubmit="@AddNewAdult">
+    <EditForm Model="@newAdultItem" OnValidSubmit="@AddNewAdultAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
@@ -57,7 +58,7 @@
 }
 else
 {
-    <EditForm Model="@newFamilyItem" OnValidSubmit="@AddNewFamily">
+    <EditForm Model="@newFamilyItem" OnValidSubmit="@AddNewFamilyAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
@@ -90,16 +91,17 @@ else
     private bool added;
     private Adult newAdultItem = new Adult();
 
-    private void AddNewFamily()
+    private async Task  AddNewFamilyAsync()
     {
-        FamilyService.AddFamily(newFamilyItem);
+        await FamilyService.AddFamilyAsync(newFamilyItem);
         FamilyService.Family = newFamilyItem;
         NavigationManager.NavigateTo("/SeeFamily");
     }
 
-    private void AddNewAdult()
+    private async Task AddNewAdultAsync()
     {
-        IList<Adult> adults = FamilyService.GetFamilies().SelectMany(item => item.Adults).ToList();
+        IList<Family> families = await FamilyService.GetFamiliesAsync();
+        IList<Adult> adults = families.SelectMany(item => item.Adults).ToList();
         int max = adults.Max(adult => adult.Id);
         newAdultItem.Id = (++max);
         newFamilyItem.Adults.Add(newAdultItem);
